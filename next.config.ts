@@ -7,7 +7,11 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "accounts.learninga-z.com"
-      }
+      },
+      {
+        protocol: "https",
+        hostname: "www.retrosupply.co"
+      },
     ]
   }
 };

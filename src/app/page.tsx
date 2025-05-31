@@ -24,6 +24,11 @@ const Page = () => {
           Sign in with Gimkit
         </Link>
       </button>
+      <button className='bg-slate-800 text-white py-2 px-3'>
+        <Link href={"/pages/retroSupplyCo"}>
+          Sign in with Retro Supply Co
+        </Link>
+      </button>
     </div>
   )
 }
