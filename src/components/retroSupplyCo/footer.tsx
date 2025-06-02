@@ -1,64 +1,114 @@
-import { PT_Sans } from 'next/font/google'
-import Link from 'next/link'
-import React from 'react'
+import { PT_Sans } from 'next/font/google';
+import Link from 'next/link';
+import React from 'react';
 
-const ptSans = PT_Sans({ subsets: ['latin'], weight: '400' }) // Use this for navbar font
+const ptSans = PT_Sans({ subsets: ['latin'], weight: '400' }); // For navbar & labels
 
 const Footer = () => {
-    return (
-        <div>
-            <div className='flex justify-between items-center text-center px-20 h-[483.469px] w-full border-t-2 border-[#cbcac9]'>
-            <div className='h-[375.469px] w-[270px]'>
-                <p style={{ fontWeight: 800 }} className={`${ptSans.className} text-[18.06px] mb-[16px]`}>20% OFF YOUR FIRST ORDER</p>
-                <p className='text-[16px] font-serif mb-[24px]'>Want exclusive offers and first access to products? Sign up for email alerts.</p>
-                <input type='email' placeholder='Enter your email address' className='w-full h-[40px] px-[10px] mb-[16px] border-[1px] border-[#cbcac9] hover:border-[#2c2c2d] rounded-[3.5px]' />
-                <button className={`${ptSans.className} w-full h-[40px] bg-[#f26547] rounded-[2px] text-[14px] text-white font-light`}>SUBSCRIBE</button>
-            </div>
-            <div className='flex justify-between'>
-                <div className='h-[375.469px] w-[270px] mt-[24px]'>
-                    <p style={{ fontWeight: 800 }} className={`${ptSans.className} text-[18.06px] mb-[16px] text-left`}>PRODUCTS</p>
-                    <div className='grid grid-cols-1 text-left gap-3'>
-                        {['Procreate', 'Photoshop', 'Illustrator', 'Clip Studio Paint', 'Affinity', 'Fonts', 'Guides & Video Training', 'The Secret Society'].map((label, index) => (
-                            <Link
-                                key={index}
-                                href="#"
-                                className={`font-serif text-[#f26547] font-extralight hover:text-black hover:underline hover:underline-offset-4`}
-                            >
-                                {label}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-                <div className='h-[375.469px] w-[270px] mt-[24px]'>
-                    <p style={{ fontWeight: 800 }} className={`${ptSans.className} text-[18.06px] mb-[16px] text-left`}>ADDITIONAL LINKS</p>
-                    <div className='grid grid-cols-1 text-left gap-3'>
-                        {['Refer a Friend', 'Terms of Service', 'License', 'Guarantee', 'Help Center', 'Privacy Policy', 'Become an Affiliate', 'Contact'].map((label, index) => (
-                            <Link
-                                key={index}
-                                href="#"
-                                className={`font-serif text-[#f26547] hover:text-black`}
-                            >
-                                {label}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-
-
-            </div>
+  return (
+    <div className="border-t-2 border-[#cbcac9] ">
+      {/* Main footer content */}
+      <div className="flex flex-wrap justify-between items-start px-10 md:px-40 py-10 gap-y-10">
+        {/* Email Subscription */}
+        <div className="w-full md:w-[270px] text-left">
+          <p className={`${ptSans.className} text-[18.06px] font-extrabold mb-4`}>
+            20% OFF YOUR FIRST ORDER
+          </p>
+          <p className="text-[16px] font-serif mb-6">
+            Want exclusive offers and first access to products? Sign up for email alerts.
+          </p>
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            className="w-full h-[40px] px-3 mb-4 border border-[#cbcac9] hover:border-[#2c2c2d] rounded-[4px] focus:outline-none"
+          />
+          <button
+            className={`${ptSans.className} w-full h-[40px] bg-[#f26547] text-white text-[14px] rounded-[3px] hover:bg-[#e2573c] transition`}
+          >
+            SUBSCRIBE
+          </button>
         </div>
-                <span className="border-b border-gray-200 w-full"></span>
-                <div className='grid h-[100px] items-center px-20'>
-                    <select className='w-[86.7812px] h-[36px] rounded-xl border-[1px] border-[#f26547] focus:border-[#f26547] text-[#f26547]'>
-                        <option>PKR Rs</option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                    </select>
-                    <Link href={"#"} className='text-[16px] mb-3 font-bold hover:underline hover:underline-offset-2 hover:text-[#f26547] duration-700 '>© 2025 RetroSupply Co.</Link>
-                </div>
-        </div>
-    )
-}
 
-export default Footer
+        <div className='flex justify-between'>
+{/* Product Links */}
+        <div className="w-full md:w-[270px] text-left">
+          <p className={`${ptSans.className} text-[18.06px] font-extrabold mb-4`}>
+            PRODUCTS
+          </p>
+          <div className="grid gap-3">
+            {[
+              'Procreate',
+              'Photoshop',
+              'Illustrator',
+              'Clip Studio Paint',
+              'Affinity',
+              'Fonts',
+              'Guides & Video Training',
+              'The Secret Society',
+            ].map((label, idx) => (
+              <Link
+                key={idx}
+                href="#"
+                className="font-serif text-[#f26547] hover:text-black transition-all duration-300 ease-in-out"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Additional Links */}
+        <div className="w-full md:w-[270px] text-left">
+          <p className={`${ptSans.className} text-[18.06px] font-extrabold mb-4`}>
+            ADDITIONAL LINKS
+          </p>
+          <div className="grid gap-3">
+            {[
+              'Refer a Friend',
+              'Terms of Service',
+              'License',
+              'Guarantee',
+              'Help Center',
+              'Privacy Policy',
+              'Become an Affiliate',
+              'Contact',
+            ].map((label, idx) => (
+              <Link
+                key={idx}
+                href="#"
+                className="font-serif text-[#f26547] hover:text-black transition-all duration-300 ease-in-out"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="border-b border-gray-200 w-[80%] mx-auto"></div>
+
+      {/* Bottom footer bar */}
+      <div className="px-10 md:px-40 py-6 gap-4">
+        <select className="w-[130px] h-[36px] rounded-xl border border-[#f26547] text-[#f26547] px-2 focus:outline-none">
+          <option>PKR Rs</option>
+          <option>USD $</option>
+          <option>EUR €</option>
+          <option>GBP £</option>
+        </select>
+        <p className="text-[16px] font-light mt-3">
+          © 2025
+          <Link
+            href="#"
+            className={`font-serif ml-1 hover:underline hover:underline-offset-2 hover:text-[#f26547] duration-300`}
+          >
+            RetroSupply Co.
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;

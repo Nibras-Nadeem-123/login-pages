@@ -48,8 +48,8 @@ const Header = () => {
     return (
         <header>
             {/* Top banner */}
-            <div className="flex justify-center text-center items-center gap-7 h-[52px] w-full bg-[#1e1e20]">
-                <p className={`${inter.className} text-[#f2ca80]`}>
+            <div className="flex justify-center text-center items-center h-[52px] w-full bg-[#1e1e20]">
+                <p className={`${inter.className} text-[#f2ca80] w-[550px] text-[15px]`}>
                     Get everything we&apos;ve ever made in-house. Save 50% for a limited time.
                 </p>
                 <button
@@ -62,12 +62,13 @@ const Header = () => {
 
             {/* Nav bar */}
             <nav className="h-[121.875px] w-full border-b-2 border-[#cbcac9]">
-                <div className='bg-[#eae6da] w-full items-center pl-[48px] '>
-                    <div className="flex gap-3 items-center h-[38px] w-11/12 mx-auto">
+                <div className='bg-[#eae6da] w-full items-center px-44'>
+                    <div className="flex gap-3 items-center h-[38px] w-11/12 ">
                         {['Tutorials', 'Articles', 'Free Goods'].map((label, index) => (
                             <Link
                                 key={index}
                                 href="#"
+                                style={{ fontWeight: 600 }}
                                 className={`${ptSans.className} text-[#333] hover:text-[#f2ca80]`}
                             >
                                 {label}
@@ -77,15 +78,15 @@ const Header = () => {
                 </div>
 
                 {/* Logo & menu */}
-                <main className="flex items-center h-[81.3056px] w-full px-[48px] relative z-50 bg-white mx-auto">
+                <main className="flex items-center h-[81.3056px] w-full px-44 relative z-50 bg-white mx-auto">
                     <Image
                         src="https://www.retrosupply.co/cdn/shop/files/RetroSupply-Logo-Black_192x32.png?v=1640114376"
                         alt="logo"
                         height={29}
                         width={175}
-                        className="h-[29.3056px] w-[175px] ml-[65px]"
+                        className="h-[29.3056px] w-[175px] "
                     />
-                    <div className="flex items-center gap-6 ml-[24px] relative h-[45.5972px] w-[725.208px] mx-auto text-center justify-center">
+                    <div className="flex items-center justify-center text-center gap-10 ml-[24px] relative h-[45.5972px] w-[985.208px] mx-auto ">
                         {navbar.map((item, index) =>
                             item.dropdown ? (
                                 <div key={index} className="relative group">
@@ -119,12 +120,12 @@ const Header = () => {
                         )}
                     </div>
 
-                    <div className='flex justify-evenly gap-8 items-center mr-10'>
+                    <div className='flex justify-evenly gap-8 items-center'>
                         <IoSearchOutline size={24} className='hover:text-[#f26447] hover:underline hover:underline-offset-8' />
                         <RiUserLine size={24} className='hover:text-[#f26447] hover:underline hover:underline-offset-8' />
-                        <button className='flex items-center justify-center text-center gap-3 h-[48px] w-[116.136px] bg-[#f26447] rounded-[4px]'>
-                            <PiShoppingCartLight size={24} />
-                            <p className={`${ptSans.className} text-[17px]`}>0 CART</p>
+                        <button className='flex items-center justify-center text-center gap-3 h-[48px] w-[116.136px] bg-[#f26447] rounded-[4px] transition-all duration-300 ease-in-out hover:bg-[#f25847] hover:shadow-lg'>
+                            <PiShoppingCartLight size={24} className='text-white'/>
+                            <p className={`${ptSans.className} text-[17px] text-white`}>0 CART</p>
                         </button>
                     </div>
                 </main>
